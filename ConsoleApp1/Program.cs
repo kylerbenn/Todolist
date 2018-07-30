@@ -8,12 +8,15 @@ namespace ConsoleApp1
 {
     class Program
     {
+        public static List<string> Todos { get; set; } = new List<string>();
+        public static List<string> DoneTodos { get; set; } = new List<string>();
+
         static void Main(string[] args)
         {
 
-            var todos = new List<string>();
+            //var todos = new List<string>()
 
-            var completedlist = new List<string>();
+            //var DoneTodos = new List<string>();
 
             Welcome();
 
@@ -34,7 +37,7 @@ namespace ConsoleApp1
 
                     string input = Console.ReadLine();
 
-                    todos.Add(input);
+                    Todos.Add(input);
 
                 }
                 else if (option == "2")
@@ -45,9 +48,9 @@ namespace ConsoleApp1
 
                     Console.WriteLine("=============================================");
 
-                    for (var i = 0; i < todos.Count; i++)
+                    for (var i = 0; i < Todos.Count; i++)
                     {
-                        Console.WriteLine(todos[i]);
+                        Console.WriteLine(Todos[i]);
                     }
                 }
                 else if (option == "3")
@@ -58,9 +61,9 @@ namespace ConsoleApp1
 
                     Console.WriteLine("=============================================");
 
-                    for (var i = 0; i < todos.Count; i++)
+                    for (var i = 0; i < Todos.Count; i++)
                     {
-                        Console.WriteLine((i + 1) + " - " + todos[i]);
+                        Console.WriteLine((i + 1) + " - " + Todos[i]);
                     }
 
                     Console.WriteLine("=============================================");
@@ -73,11 +76,11 @@ namespace ConsoleApp1
 
                     int choiceInt = int.Parse(input);
 
-                    string taskToMove = todos[choiceInt];
+                    string taskToMove = Todos[choiceInt];
 
-                    todos.RemoveAt(choiceInt);
+                    Todos.RemoveAt(choiceInt);
 
-                    completedlist.Add(taskToMove);
+                    DoneTodos.Add(taskToMove);
 
                 }
 
@@ -90,9 +93,9 @@ namespace ConsoleApp1
 
                     Console.WriteLine("=============================================");
 
-                    for (var i = 0; i < completedlist.Count; i++)
+                    for (var i = 0; i < DoneTodos.Count; i++)
                     {
-                        Console.WriteLine(completedlist[i]);
+                        Console.WriteLine(DoneTodos[i]);
                     }
 
                 }
@@ -148,8 +151,9 @@ namespace ConsoleApp1
 
             return option;
 
-
         }
+
+        
     }
 
 
