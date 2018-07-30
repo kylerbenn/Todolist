@@ -21,25 +21,7 @@ namespace ConsoleApp1
 
             while (true)
             {
-
-                Console.WriteLine("=============================================");
-
-                Console.WriteLine(" Choose an option " + name + " : ");
-
-                Console.WriteLine("=============================================");
-
-                Console.WriteLine(" 1. Add TODO ");
-
-                Console.WriteLine(" 2. View TODOLIST ");
-
-                Console.WriteLine(" 3. Remove a TODO from your TODOLIST ");
-
-                Console.WriteLine(" 4. View Completed TODOLIST ");
-
-                Console.WriteLine(" 5. QUIT ");
-
-                string option = Console.ReadLine();
-
+                var option = showMenuAndGetChoice(name);
 
 
                 if (option == "1")
@@ -142,5 +124,33 @@ namespace ConsoleApp1
 
             Console.WriteLine(" Please enter your name:");
         }
+
+        public static string showMenuAndGetChoice(string name)
+
+        {
+            Console.WriteLine("=============================================");
+
+            Console.WriteLine(" Choose an option " + name + " : ");
+
+            Console.WriteLine("=============================================");
+
+            Console.WriteLine(" 1. Add TODO ");
+
+            Console.WriteLine(" 2. View TODOLIST ");
+
+            Console.WriteLine(" 3. Remove a TODO from your TODOLIST ");
+
+            Console.WriteLine(" 4. View Completed TODOLIST ");
+
+            Console.WriteLine(" 5. QUIT ");
+
+            string option = Console.ReadLine();
+
+            return option;
+
+
+        }
     }
+
+
 }
