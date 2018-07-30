@@ -15,7 +15,7 @@ namespace ConsoleApp1
 
             var completedlist = new List<string>();
 
-            printBeginning();
+            Welcome();
 
             var name = Console.ReadLine();
 
@@ -95,7 +95,7 @@ namespace ConsoleApp1
 
                     todos.RemoveAt(choiceInt);
 
-                    completedlist.Add(input);
+                    completedlist.Add(taskToMove);
 
                 }
 
